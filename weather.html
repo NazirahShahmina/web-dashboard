@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Weather Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-sky-50 text-gray-900">
+  <header class="bg-sky-600 text-white py-5 text-center">
+    <h1 class="text-2xl font-bold">🌤 Weather Dashboard</h1>
+    <a href="index.html" class="text-sm underline hover:text-gray-200">← Back to Home</a>
+  </header>
+
+  <main class="max-w-3xl mx-auto p-6">
+    <section class="bg-white p-6 rounded shadow-md mb-6">
+      <label class="block text-lg mb-2 font-medium">Enter City Name:</label>
+      <div class="flex gap-2">
+        <input type="text" id="cityInput" placeholder="e.g., Kuala Lumpur" class="w-full border p-2 rounded" />
+        <button onclick="getWeather()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Search</button>
+      </div>
+    </section>
+
+    <section id="weatherResult" class="bg-white p-6 rounded shadow-md hidden">
+      <h2 class="text-xl font-semibold mb-2">Weather Data for <span id="cityName"></span></h2>
+      <p>🌡 Temperature: <span id="temp"></span> °C</p>
+      <p>💧 Humidity: <span id="humidity"></span>%</p>
+      <p>🌥 Condition: <span id="condition"></span></p>
+
+      <canvas id="weatherChart" class="mt-4"></canvas>
+    </section>
+  </main>
+
+  <script src="js/weather.js"></script>
+</body>
+</html>
